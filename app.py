@@ -243,7 +243,7 @@ st.markdown("""
 
 # Sidebar
 st.sidebar.image("Q.png", width=250)
-topic_type = st.sidebar.radio("Topic type:", ("General", "Coding", "Math", "Science"))
+topic_type = st.sidebar.radio("Topic type:", ("General", "Machine Learning & Data Mining", "Neuron Networks and Deep Learning", "Computer Networks"))
 
 # Main content
 st.markdown("<h1 class='main-header'>AI Study Assistant</h1>", unsafe_allow_html=True)
