@@ -83,120 +83,85 @@ st.markdown("""
 <style>
     /* Overall app background */
     .stApp {
-        background: linear-gradient(to bottom right, #E0E5EC, #C2CCD6);
+        background: linear-gradient(to bottom right, #f3f4f6, #e0e7ff);
     }
     
-    /* Text color and font */
-    body {
-        color: #2C3E50;  /* Changed to dark color for contrast */
-        font-family: 'Arial', sans-serif;
-    }
-    
-    /* Center content */
+    /* Center main content */
     .stContainer {
         max-width: 800px;
+        padding: 20px;
         margin: 0 auto;
     }
-    
-    /* Response container styling */
-    .response-card {
-        background-color: #FFFFFF;
-        color: #2C3E50;
-        border-radius: 10px;
-        padding: 20px;
-        margin: 20px 0;
-        border: 1px solid #BDC3C7;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Header styling */
+    .main-header {
+        background: linear-gradient(45deg, #4F46E5, #6366F1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5em;
+        text-align: center;
+        font-weight: bold;
     }
-    
-    /* Style the hint text */
-    .hint-text {
-        background-color: #ECF0F1;
-        color: #2C3E50;
+
+    /* Subheader styling */
+    .sub-header {
+        background: linear-gradient(45deg, #F87171, #EF4444);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    /* Text input styling */
+    .stTextArea textarea {
+        background-color: #ffffff;
+        border: 1px solid #d1d5db;
         border-radius: 10px;
         padding: 15px;
-        margin-top: 20px;
-        border-left: 5px solid #3498DB;
+        font-size: 1em;
+        color: #374151;
     }
-    
+
+    /* File uploader styling */
+    .stFileUploader {
+        background-color: #ffffff;
+        border: 1px dashed #9CA3AF;
+        border-radius: 10px;
+        padding: 15px;
+        color: #374151;
+        margin: 15px 0;
+    }
+
+    /* Response card styling */
+    .response-card {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Hint text styling */
+    .hint-text {
+        background-color: #f9fafb;
+        border-left: 5px solid #3B82F6;
+        border-radius: 5px;
+        padding: 15px;
+        font-size: 0.9em;
+        color: #374151;
+        margin-top: 10px;
+    }
+
     /* Button styling */
     .stButton > button {
-        background-color: #3498DB;
+        background-color: #6366F1;
         color: white;
         border: none;
-        border-radius: 5px;
+        border-radius: 10px;
         padding: 10px 20px;
-    }
-    
-    /* Sidebar background color */
-    .stSidebar {
-        background-color: #D6DCE5;
-        color: #2C3E50;
-    }
-    
-    /* Header styling with gradient and animation */
-    .main-header {
-        background: linear-gradient(45deg, #3498DB, #2980B9);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 3em;
-        text-align: center;
-        animation: fadeInDown 1s ease-out;
-    }
-    
-    /* Subheader styling with gradient and animation */
-    .sub-header {
-        background: linear-gradient(45deg, #E74C3C, #C0392B);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 1.5em;
-        text-align: center;
-        animation: fadeInUp 1s ease-out;
-    }
-    
-    /* Footer styling */
-    .footer {
-        background: linear-gradient(45deg, #BDC3C7, #95A5A6);
-        color: #2C3E50;
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        left: 0;
-        animation: fadeIn 1s ease-out;
-    }
-    
-    /* Keyframe animations */
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+        font-weight: bold;
     }
 
     /* Tab styling */
@@ -206,40 +171,28 @@ st.markdown("""
 
     .stTabs [data-baseweb="tab"] {
         height: 50px;
-        background-color: #D6DCE5;
-        color: #2C3E50;
+        background-color: #e0e7ff;
+        color: #4B5563;
         border-radius: 5px 5px 0 0;
     }
 
     .stTabs [aria-selected="true"] {
-        background-color: #3498DB;
+        background-color: #6366F1;
         color: white;
     }
 
-    /* Previous responses and question/answer headings */
-    .response-card h4 {
-        color: #2C3E50;
-    }
-
-    /* Input area styling */
-    .stTextArea textarea {
-        background-color: #FFFFFF;
-        color: #2C3E50;
-        border: 1px solid #BDC3C7;
-    }
-
-    /* File uploader styling */
-    .stFileUploader {
-        background-color: #FFFFFF;
-        color: #2C3E50;
-        border: 1px solid #BDC3C7;
-        border-radius: 5px;
+    /* Footer styling */
+    .footer {
+        background: linear-gradient(45deg, #CBD5E1, #9CA3AF);
+        color: #374151;
+        text-align: center;
         padding: 10px;
+        font-size: 0.9em;
+        margin-top: 10px;
     }
-
 </style>
-
 """, unsafe_allow_html=True)
+
 
 # Sidebar
 st.sidebar.image("Q.png", width=250)
