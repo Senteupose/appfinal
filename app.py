@@ -19,7 +19,7 @@ if 'pdf_responses' not in st.session_state:
 # Initialize Groq client
 GROQ_API_KEY = "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"
 
-client = Groq(api_key=st.secrets[GROQ_API_KEY])
+client = Groq(api_key=GROQ_API_KEY)
 
 # Initialize OCR
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update this path for Windows
