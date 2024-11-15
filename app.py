@@ -50,12 +50,12 @@ def get_ai_response(input_text, topic_type):
         system_message = """you are an AI study assistant. Provide hints and approaches to solve problems, but don't give exact answers. 
         When crafting your response, consider the following prompts and guidelines:the answershould be versatile and arises curiosity in the user and do not reveal the exact answers give them hints to solve a particular solution . you should tell them that you could not give them exact anwer if they demand .
         Ensure each hint is unique and encourages critical thinking. Focus on {topic_type}-related """
-        if topic_type == "Coding":
-            system_message += "Focus on coding-related topics and provide specific coding hints."
-        elif topic_type == "Math":
-            system_message += "Focus on math-related topics and provide specific mathematical hints."
-        elif topic_type == "Science":
-            system_message += "Focus on science-related topics and provide specific scientific hints."
+        if topic_type == "Machine Learning and statistics":
+            system_message += "Focus on coding-related topics and provide specific Machine Learning and Statistics hints."
+        elif topic_type == "AI":
+            system_message += "Focus on math-related topics and provide specific AI hints."
+        elif topic_type == "Computer Networks":
+            system_message += "Focus on science-related topics and provide specific computer networks hints."
         else:
             system_message += "Focus on general education-related topics."
 
@@ -200,7 +200,7 @@ st.markdown("""
 
 # Sidebar
 st.sidebar.image("Q.png", width=250)
-topic_type = st.sidebar.radio("Topic type:", ("General", "Machine Learning & Data Mining", "Neuron Networks and Deep Learning", "Computer Networks"))
+topic_type = st.sidebar.radio("Topic type:", ("General", "Machine Learning and Statistics", "AI", "Computer Networks"))
 
 # Main content
 st.markdown("<h1 class='main-header'>AI Study Assistant</h1>", unsafe_allow_html=True)
