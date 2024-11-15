@@ -69,6 +69,10 @@ def get_ai_response(input_text, topic_type):
                     "role": "user",
                     "content": input_text,
                 }
+                {
+                "role": "user",
+                "content": "Can you recommend resources (books, YouTube videos, articles, related quizzes, and interview questions) related to the topic mentioned above?"
+                }
             ],
             model="llama-3.1-70b-versatile",
         )
